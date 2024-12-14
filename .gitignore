@@ -1,0 +1,29 @@
+# Dependencies
+/node_modules/
+
+# Production
+/out/
+/build/
+/.next/
+/.next-export/
+
+# Misc
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# dotenv environment variables
+.env
+.env.build
+
+# Next.js build output
+.next/
+
+# TypeScript (if using)
+tsconfig.json
+*.tsbuildinfo
+
+# Optional
+public/
