@@ -5,51 +5,10 @@ import {
   FolderIcon,
 } from "@heroicons/react/16/solid";
 import { useState } from "react";
-
-type FolderType = {
-  name: string;
-  folders?: FolderType[];
-};
+import { folders } from "./data";
+import { FolderType } from "./types";
 
 export default function Home() {
-  const folders: FolderType[] = [
-    {
-      name: "home",
-      folders: [
-        {
-          name: "user",
-          folders: [
-            {
-              name: "Documents",
-              folders: [{ name: "resume.pdf" }],
-            },
-            {
-              name: "Pictures",
-              folders: [{ name: "vacation.jpg" }],
-            },
-            {
-              name: "Downloads",
-              folders: [{ name: "setup.exe" }],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: "etc",
-      folders: [
-        { name: "nginx", folders: [{ name: "nginx.conf" }] },
-        { name: "ssh", folders: [{ name: "sshd_config" }] },
-      ],
-    },
-    {
-      name: "var",
-      folders: [
-        { name: "log", folders: [{ name: "syslog" }] },
-        { name: "www", folders: [{ name: "index.html" }] },
-      ],
-    },
-  ];
   return (
     <main className="min-h-screen mx-auto max-w-sm p-12">
       <ul>
@@ -81,7 +40,7 @@ function Folder({ folder }: { folder: FolderType }) {
             <FolderIcon className="size-6 text-sky-400 " />
           </>
         ) : (
-          <DocumentIcon className="size-6 text-white " />
+          <DocumentIcon className="size-6 text-white ml-6" />
         )}
         {folder.name}
       </span>
